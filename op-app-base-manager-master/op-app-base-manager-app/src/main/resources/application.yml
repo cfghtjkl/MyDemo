@@ -1,0 +1,28 @@
+spring:
+    profiles:
+        active: dev
+server:
+  port: 80
+  servlet:
+    context-path: /abm-web
+
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  config-location: classpath:mybatis-config.xml
+  type-aliases-package: com.djn.cn.op.abm.*.entity
+
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+
+#mapper
+#mappers 多个接口时逗号隔开
+mapper:
+ mappers: com.djn.cn.op.abm.base.mapper.MyMapper
+ mapper: 
+   not-empty: true
+   identity: MYSQL
+
